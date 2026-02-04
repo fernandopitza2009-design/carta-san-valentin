@@ -1,0 +1,80 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.carta {
+  background: white;
+  width: 420px;
+  padding: 35px;
+  border-radius: 25px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+  text-align: center;
+}
+
+.carta h1 {
+  color: #e91e63;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.carta p {
+  color: #555;
+  line-height: 1.8;
+  font-size: 15px;
+}
+.carta {
+  animation: latido 2s infinite;
+}
+
+@keyframes latido {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+.corazon {
+  position: fixed;
+  bottom: -20px;
+  font-size: 20px;
+  animation: flotar 6s linear infinite;
+}
+
+@keyframes flotar {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+}
+.carta p {
+  text-align: justify;
+}
+
+.carta h1 {
+  text-align: center;
+}
+button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #e91e63;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #c2185b;
+  transform: scale(1.1);
+}
