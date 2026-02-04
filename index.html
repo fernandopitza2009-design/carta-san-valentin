@@ -34,27 +34,32 @@
         ¿Quieres ser mi SAN VALENTÍN?💞❣️
     </p>
     </div>
-    <button onclick="acepta()">💘 Sí, acepto 💘</button>
-<script>
-  const musica = document.getElementById("musica");
+  <button onclick="acepta()">💘 Sí, acepto 💘</button>
 
-  function iniciarMusica() {
-    musica.volume = 0.4;
-    musica.play();
-    document.removeEventListener("click", iniciarMusica);
-    document.removeEventListener("touchstart", iniciarMusica);
-  }
+  <!-- 🎵 AUDIO VA ANTES DEL SCRIPT -->
+  <audio id="musica" loop>
+    <source src="musica.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio
+  </audio>
 
-  document.addEventListener("click", iniciarMusica);
-  document.addEventListener("touchstart", iniciarMusica);
+  <!-- ✅ SCRIPT AL FINAL -->
+  <script>
+    const musica = document.getElementById("musica");
 
-  function acepta() {
-    alert("💖 Gracias por hacerme la persona más feliz del mundo 💖");
-  }
-</script>
-    
+    function iniciarMusica() {
+      musica.volume = 0.4;
+      musica.play();
+      document.removeEventListener("click", iniciarMusica);
+      document.removeEventListener("touchstart", iniciarMusica);
+    }
 
+    document.addEventListener("click", iniciarMusica);
+    document.addEventListener("touchstart", iniciarMusica);
 
+    function acepta() {
+      alert("💖 Gracias por hacerme la persona más feliz del mundo 💖");
+    }
+  </script>
 
     <div class="corazon" style="left:10%;">💖</div>
 <div class="corazon" style="left:30%;">💘</div>
@@ -67,5 +72,7 @@
 
 
 </body>
+
+
 
 
