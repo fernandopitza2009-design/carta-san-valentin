@@ -9,30 +9,41 @@ body {
   align-items: center;
   font-family: 'Segoe UI', sans-serif;
   overflow-x: hidden;
-  padding: 20px; /* 
+  padding: 20px; /* 👈 IMPORTANTE PARA CEL */
+}
 
-/* ===== CARTA ===== */
 .carta {
   background: white;
-  width: 100%;
+  width: 90%;
   max-width: 420px;
   padding: 35px;
   border-radius: 25px;
   box-shadow: 0 15px 35px rgba(0,0,0,0.3);
   text-align: center;
-  animation: abrirCarta 1.5s ease, latido 2s infinite 1.5s;
+
+  animation: abrirCarta 1.5s ease forwards;
 }
 
-/* Animación de abrir */
+.carta.latido {
+  animation: latido 2s infinite;
+}
+
+
 @keyframes abrirCarta {
   from {
-    transform: scale(0.85);
+    transform: scale(0.8);
     opacity: 0;
   }
   to {
     transform: scale(1);
     opacity: 1;
   }
+}
+
+@keyframes latido {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+  100% { transform: scale(1); }
 }
 
 /* Latido */
@@ -119,6 +130,8 @@ button:hover {
     text-align: center; /* 👈 SE VE MEJOR EN CEL */
   }
 }
+
+
 
 
 
