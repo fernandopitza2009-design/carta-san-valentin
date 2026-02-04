@@ -4,17 +4,18 @@ body {
   min-height: 100vh;
   background: linear-gradient(135deg, #ff758c, #ff7eb3);
   display: flex;
-  flex-direction: column; /* 👈 ESTO ES LA CLAVE */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   font-family: 'Segoe UI', sans-serif;
   overflow-x: hidden;
+  padding: 20px; /* 👈 IMPORTANTE PARA CEL */
 }
 
 /* ===== CARTA ===== */
 .carta {
   background: white;
-  width: 90%;
+  width: 100%;
   max-width: 420px;
   padding: 35px;
   border-radius: 25px;
@@ -26,7 +27,7 @@ body {
 /* Animación de abrir */
 @keyframes abrirCarta {
   from {
-    transform: scale(0.8);
+    transform: scale(0.85);
     opacity: 0;
   }
   to {
@@ -47,20 +48,19 @@ body {
   color: #e91e63;
   font-size: 20px;
   margin-bottom: 20px;
-  text-align: center;
 }
 
 .carta p {
   color: #555;
   line-height: 1.8;
   font-size: 15px;
-  text-align: justify;
+  text-align: justify; /* PC */
 }
 
 /* ===== BOTÓN ===== */
 button {
   display: block;
-  margin: 20px auto;
+  margin: 25px auto 0;
   padding: 12px 25px;
   background: #e91e63;
   color: white;
@@ -70,11 +70,12 @@ button {
   cursor: pointer;
   transition: 0.3s;
   animation: brillo 2s infinite;
+  max-width: 90%;
 }
 
 button:hover {
   background: #c2185b;
-  transform: scale(1.1);
+  transform: scale(1.08);
 }
 
 /* Brillo del botón */
@@ -90,6 +91,7 @@ button:hover {
   bottom: -20px;
   font-size: 20px;
   animation: flotar 6s linear infinite;
+  pointer-events: none;
 }
 
 @keyframes flotar {
@@ -115,7 +117,10 @@ button:hover {
 
   .carta p {
     font-size: 14px;
+    text-align: center; /* 👈 SE VE MEJOR EN CEL */
   }
 }
+
+
 
 
