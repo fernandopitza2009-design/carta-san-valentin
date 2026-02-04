@@ -1,43 +1,90 @@
+/* ===== BODY ===== */
 body {
   margin: 0;
   min-height: 100vh;
   background: linear-gradient(135deg, #ff758c, #ff7eb3);
   display: flex;
+  flex-direction: column; /* 👈 ESTO ES LA CLAVE */
   justify-content: center;
   align-items: center;
   font-family: 'Segoe UI', sans-serif;
+  overflow-x: hidden;
 }
 
+/* ===== CARTA ===== */
 .carta {
   background: white;
-  width: 420px;
+  width: 90%;
+  max-width: 420px;
   padding: 35px;
   border-radius: 25px;
   box-shadow: 0 15px 35px rgba(0,0,0,0.3);
   text-align: center;
+  animation: abrirCarta 1.5s ease, latido 2s infinite 1.5s;
 }
 
-.carta h1 {
-  color: #e91e63;
-  font-size: 20px;
-  margin-bottom: 20px;
+/* Animación de abrir */
+@keyframes abrirCarta {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
-.carta p {
-  color: #555;
-  line-height: 1.8;
-  font-size: 15px;
-}
-.carta {
-  animation: latido 2s infinite;
-}
-
+/* Latido */
 @keyframes latido {
   0% { transform: scale(1); }
   50% { transform: scale(1.02); }
   100% { transform: scale(1); }
 }
 
+/* ===== TEXTO ===== */
+.carta h1 {
+  color: #e91e63;
+  font-size: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.carta p {
+  color: #555;
+  line-height: 1.8;
+  font-size: 15px;
+  text-align: justify;
+}
+
+/* ===== BOTÓN ===== */
+button {
+  display: block;
+  margin: 20px auto;
+  padding: 12px 25px;
+  background: #e91e63;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  animation: brillo 2s infinite;
+}
+
+button:hover {
+  background: #c2185b;
+  transform: scale(1.1);
+}
+
+/* Brillo del botón */
+@keyframes brillo {
+  0% { box-shadow: 0 0 5px #e91e63; }
+  50% { box-shadow: 0 0 20px #ff80ab; }
+  100% { box-shadow: 0 0 5px #e91e63; }
+}
+
+/* ===== CORAZONES ===== */
 .corazon {
   position: fixed;
   bottom: -20px;
@@ -55,26 +102,20 @@ body {
     opacity: 0;
   }
 }
-.carta p {
-  text-align: justify;
+
+/* ===== AJUSTES PARA CELULAR ===== */
+@media (max-width: 480px) {
+  .carta {
+    padding: 25px;
+  }
+
+  .carta h1 {
+    font-size: 18px;
+  }
+
+  .carta p {
+    font-size: 14px;
+  }
 }
 
-.carta h1 {
-  text-align: center;
-}
-button {
-  margin-top: 20px;
-  padding: 12px 25px;
-  background: #e91e63;
-  color: white;
-  border: none;
-  border-radius: 25px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s;
-}
 
-button:hover {
-  background: #c2185b;
-  transform: scale(1.1);
-}
