@@ -36,13 +36,23 @@
     </div>
     <button onclick="acepta()">💘 Sí, acepto 💘</button>
 <script>
-  function acepta() {
-    const musica = document.getElementById("musica");
+  const musica = document.getElementById("musica");
+
+  function iniciarMusica() {
     musica.volume = 0.4;
     musica.play();
+    document.removeEventListener("click", iniciarMusica);
+    document.removeEventListener("touchstart", iniciarMusica);
+  }
+
+  document.addEventListener("click", iniciarMusica);
+  document.addEventListener("touchstart", iniciarMusica);
+
+  function acepta() {
     alert("💖 Gracias por hacerme la persona más feliz del mundo 💖");
   }
 </script>
+    
 
 
 
@@ -57,3 +67,5 @@
 
 
 </body>
+
+
