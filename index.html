@@ -60,7 +60,21 @@
       alert("💖 Gracias por hacerme la persona más feliz del mundo 💖");
     }
   </script>
+<script>
+  setInterval(() => {
+    const corazon = document.createElement("div");
+    corazon.classList.add("corazon");
+    corazon.innerText = ["💖","💘","💝","💞","❣️"][Math.floor(Math.random()*5)];
+    corazon.style.left = Math.random() * 100 + "vw";
+    corazon.style.fontSize = (16 + Math.random() * 20) + "px";
 
+    document.body.appendChild(corazon);
+
+    setTimeout(() => {
+      corazon.remove();
+    }, 6000);
+  }, 400);
+</script>
     <div class="corazon" style="left:10%;">💖</div>
 <div class="corazon" style="left:30%;">💘</div>
 <div class="corazon" style="left:50%;">💝</div>
@@ -72,6 +86,7 @@
 
 
 </body>
+
 
 
 
